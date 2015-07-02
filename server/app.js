@@ -1,19 +1,18 @@
 import koa from 'koa'
 import bodyParser from 'koa-body-parser'
 import cors from 'koa-cors'
-import routerFactory from 'koa-router'
+import requestLogger from 'koa-logger'
 import logger from 'winston'
 
-import appRoutes from './routes'
+import {genericModelRoutes} from './routes'
 
 const PORT = process.env.STAKEOUT_PORT || 5050
 const app = koa()
-var router = routerFactory()
-appRoutes(router)
 
+app.use(requestLogger())
 app.use(cors())
 app.use(bodyParser())
-app.use(router.routes())
+app.use(genericModelRoutes.routes())
 
 app.listen(PORT, function() {
   console.log()

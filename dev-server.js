@@ -1,6 +1,6 @@
-import webpack from 'webpack';
-import WebpackDevServer from 'webpack-dev-server';
-import config from './webpack.config.js';
+import webpack from 'webpack'
+import WebpackDevServer from 'webpack-dev-server'
+import config from './webpack.config.js'
 
 const serverOptions = {
   publicPath: config.output.publicPath,
@@ -14,15 +14,18 @@ const serverOptions = {
     chunkModules: false,
     modules: false
   },
-  historyApiFallback: true
-};
-
-const compiler = webpack(config);
-const webpackDevServer = new WebpackDevServer(compiler, serverOptions);
-
-webpackDevServer.listen(config._hotPort, function (err) {
-  if (err) {
-    throw err;
+  historyApiFallback: true,
+  proxy: {
+    '/api/*': 'http://localhost:' + (process.env.STAKEOUT_PORT || 5050)
   }
-  console.log('webpack dev server listening on %s', config._hotPort);
-});
+}
+
+const compiler = webpack(config)
+const webpackDevServer = new WebpackDevServer(compiler, serverOptions)
+
+webpackDevServer.listen(config._hotPort, function(err) {
+  if (err) {
+    throw err
+  }
+  console.log('webpack dev server listening on %s', config._hotPort)
+})
