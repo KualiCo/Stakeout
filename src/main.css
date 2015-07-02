@@ -1,0 +1,10 @@
+body {
+  background: #215289;
+  font-size: 18px;
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
