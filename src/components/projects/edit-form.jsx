@@ -1,8 +1,8 @@
 import React from 'react'
 import {Input} from 'react-bootstrap'
 
-class StakeoutsEditForm extends React.Component {
-  static displayName = 'StakeoutsEditForm'
+class ProjectsEditForm extends React.Component {
+  static displayName = 'ProjectsEditForm'
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ class StakeoutsEditForm extends React.Component {
   }
 }
 
-export default StakeoutsEditForm
+export default ProjectsEditForm

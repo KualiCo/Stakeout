@@ -34,8 +34,8 @@ var STYLES = {
   }
 }
 
-export default class Stakeouts extends Component {
-  static displayName = 'Stakeouts'
+export default class ProjectsCoreComponent extends Component {
+  static displayName = 'ProjectsCore'
 
   constructor(props) {
     super(props)
@@ -46,7 +46,7 @@ export default class Stakeouts extends Component {
       <Grid>
         <Row>
           <Col xs={12}>
-            <Panel headerText="Stakeouts" iconName="binoculars">
+            <Panel headerText="Projects" iconName="binoculars">
               <ul style={STYLES.list}>
                 <li style={STYLES.listItem}>
                   <div style={STYLES.listItemRowWrapper}>

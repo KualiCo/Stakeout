@@ -20,9 +20,9 @@ var DS = new JSData.DS({
 })
 DS.registerAdapter('rethinkdb', rethinkdbAdapter, { default: true })
 
-export var Stakeouts = DS.defineResource({
-  name: 'stakeouts',
-  table: 'stakeouts'
+export var Projects = DS.defineResource({
+  name: 'projects',
+  table: 'projects'
 })
 
 export var Snapshots = DS.defineResource({

@@ -1,8 +1,8 @@
-import {Stakeouts, Snapshots} from './db'
+import {Projects, Snapshots} from './db'
 import Router from 'koa-router'
 
 const models = {
-  'stakeouts': Stakeouts,
+  'projects': Projects,
   'snapshots': Snapshots
 }
 

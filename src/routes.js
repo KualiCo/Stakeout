@@ -5,13 +5,13 @@ import { Route, DefaultRoute, Redirect } from 'react-router'
 import App from './components/app'
 
 import SnapshotsSmart from './components/snapshots-smart'
-import Stakeouts from './components/stakeouts/wrapper'
+import Projects from './components/projects'
 
 let routes = (
   <Route name="app" path="/" handler={App}>
-    <Route path=":stakeout/snapshots" handler={SnapshotsSmart} name="snapshots"/>
-    <Route path="stakeouts" handler={Stakeouts} name="stakeouts"/>
-    <Redirect from="/" to="stakeouts"/>
+    <Route path=":project/snapshots" handler={SnapshotsSmart} name="snapshots"/>
+    <Route path="projects" handler={Projects} name="projects"/>
+    <Redirect from="/" to="projects"/>
   </Route>
 )
 
