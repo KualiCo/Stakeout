@@ -1,9 +1,12 @@
 import React from 'react'
 import Router from 'react-router'
-import routes from './routes'
 import attachFastClick from 'fastclick'
+import FluxComponent from 'flummox/component'
 
+import routes from './routes'
+import flux from 'src/lib/store'
 import './main.css'
+
 
 // Remove 300ms tap delay on mobile devices
 attachFastClick.attach(document.body)
@@ -17,6 +20,9 @@ const router = Router.create({
 })
 
 router.run((Handler, state) => {
-  React.render(<Handler {...state} />,
+  React.render(
+    <FluxComponent flux={flux}>
+      <Handler {...state} />
+    </FluxComponent>,
     document.getElementById('root'))
 })

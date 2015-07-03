@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { RouteHandler } from 'react-router'
-import {Navbar, Nav, NavItem} from 'react-bootstrap'
+import {Navbar, NavItem} from 'react-bootstrap'
 import Icon from 'react-fontawesome'
 
 var STYLES = {
@@ -21,6 +21,7 @@ var STYLES = {
 }
 
 export default class App {
+  static displayName = 'App'
 
   static propTypes = {
     pathname: PropTypes.string.isRequired

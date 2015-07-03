@@ -42,6 +42,9 @@ module.exports = {
     extensions: ['', '.js', '.jsx', 'index.js', 'index.jsx'],
     fallback: [__dirname]
   },
+  externals: {
+    'js-data-schema': 'undefined' // See https://github.com/js-data/js-data/issues/58
+  },
   module: {
     loaders: [{
       test: /\.jsx?$/,
